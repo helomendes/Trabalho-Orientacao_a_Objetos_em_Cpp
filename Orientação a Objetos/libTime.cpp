@@ -146,9 +146,6 @@ void editarTime(Time *team, short int *op) {
 
 void imprimirTimes(Jogo* j) {
 	std::list<Time*> lista = j->getTimes();
-	if (lista.size() <= 0) {
-		std::cout << "Não existem times." << std::endl;
-	}
 	std::list<Time*>::iterator it2;
 	short int i = 1;
 	for (it2 = lista.begin(); it2 != lista.end(); it2++) {
