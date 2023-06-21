@@ -1949,7 +1949,7 @@
 											"top": 363,
 											"width": 281.48681640625,
 											"height": 13,
-											"text": "+getGoleiros(): list<Jogador*>",
+											"text": "+getGoleiros(): list<Jogador*>*",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1966,7 +1966,7 @@
 											"top": 378,
 											"width": 281.48681640625,
 											"height": 13,
-											"text": "+getDefensores(): list<Jogador*>",
+											"text": "+getDefensores(): list<Jogador*>*",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1983,7 +1983,7 @@
 											"top": 393,
 											"width": 281.48681640625,
 											"height": 13,
-											"text": "+getMeiocampistas(): list<Jogador*>",
+											"text": "+getMeiocampistas(): list<Jogador*>*",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2000,7 +2000,7 @@
 											"top": 408,
 											"width": 281.48681640625,
 											"height": 13,
-											"text": "+getAtacantes(): list<Jogador*>",
+											"text": "+getAtacantes(): list<Jogador*>*",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2017,7 +2017,7 @@
 											"top": 423,
 											"width": 281.48681640625,
 											"height": 13,
-											"text": "+getTecnicos(): list<Tecnico*>",
+											"text": "+getTecnicos(): list<Tecnico*>*",
 											"horizontalAlignment": 0
 										},
 										{
@@ -5552,7 +5552,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGIdPVP1lsavZc="
 									},
-									"type": "list<Jogador*>",
+									"type": "list<Jogador*>*",
 									"direction": "return"
 								}
 							]
@@ -5571,7 +5571,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGIdPVXxVuAYnY="
 									},
-									"type": "list<Jogador*>",
+									"type": "list<Jogador*>*",
 									"direction": "return"
 								}
 							]
@@ -5590,7 +5590,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGIdPVf51vmlvc="
 									},
-									"type": "list<Jogador*>",
+									"type": "list<Jogador*>*",
 									"direction": "return"
 								}
 							]
@@ -5609,7 +5609,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGIdPbhq19yxHE="
 									},
-									"type": "list<Jogador*>",
+									"type": "list<Jogador*>*",
 									"direction": "return"
 								}
 							]
@@ -5628,7 +5628,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGIdPb0r2AIK4k="
 									},
-									"type": "list<Tecnico*>",
+									"type": "list<Tecnico*>*",
 									"direction": "return"
 								}
 							]
