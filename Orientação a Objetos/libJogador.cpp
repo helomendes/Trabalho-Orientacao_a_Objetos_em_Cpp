@@ -238,15 +238,11 @@ void imprimirJogador(Jogador* j) {
 }
 
 void imprimirJogadores(std::list<Jogador*> lista) {
-	if (lista.size() <= 0) {
-		std::cout << "Não existem jogadores.\n";
-	} else {
-		unsigned short int i = 1;
-		std::list<Jogador*>::iterator it;
-		for (it = lista.begin(); it != lista.end(); it++) {
-			std::cout << '\n' << "\t-----" << i << "-----" << '\n';
-			imprimirJogador(*it);
-			i++;
-		}
+	unsigned short int i = 1;
+	std::list<Jogador*>::iterator it;
+	for (it = lista.begin(); it != lista.end(); it++) {
+		std::cout << '\n' << "\t-----" << i << "-----" << '\n';
+		imprimirJogador(*it);
+		i++;
 	}
 }
