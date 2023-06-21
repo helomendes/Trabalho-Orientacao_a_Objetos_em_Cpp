@@ -27,17 +27,24 @@ int main() {
 				//continuar
 				system("clear");
 				short int t;
-				std::cout << "digite 0 para voltar\n";
-  			    std::cout << "Selecione o time:\n";
-				imprimirTimes(game);
-				std::cin >> t;
-				if (t != 0) {
-					t = t-1;
-					std::list<Time*>::iterator it = std::next(game->getTimes().begin(), t);
-					editarTime(*it, &op);
-					if (op == 100) {
-						game->adicionarTime(*it);
-						game->removerTime(t);
+				std::cout << "digite 0 para voltar\n\n";
+				if (game->getTimes().size() <= 0) {
+					std::cout << "Não existem times." << std::endl;
+					std::cin >> t;
+				} else {
+	  			    	std::cout << "Selecione o time:\n";
+					imprimirTimes(game);
+					std::cin >> t;
+					while (t > game->getTimes().size() && t != 0) 
+						std::cin >> t;
+					if (t != 0) {
+						t = t-1;
+						std::list<Time*>::iterator it = std::next(game->getTimes().begin(), t);
+						editarTime(*it, &op);
+						if (op == 100) {
+							game->adicionarTime(*it);
+							game->removerTime(t);
+						}
 					}
 				}
 				break;
