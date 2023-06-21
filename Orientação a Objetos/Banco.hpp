@@ -9,19 +9,19 @@
 class Banco{
 	public:	
 		Banco();
-		virtual ~Banco() = default;
+		virtual ~Banco();
 
 		void adicionarJogador(Jogador* novoJogador);
 		
-		std::list<Jogador*> getGoleiros();
+		std::list<Jogador*>* getGoleiros();
 
-		std::list<Jogador*> getDefensores() const;
+		std::list<Jogador*>* getDefensores();
 
-		std::list<Jogador*> getMeiocampistas() const;
+		std::list<Jogador*>* getMeiocampistas();
 
-		std::list<Jogador*> getAtacantes() const;
+		std::list<Jogador*>* getAtacantes();
 
-		std::list<Tecnico*> getTecnicos() const;
+		std::list<Tecnico*>* getTecnicos();
 
 		void adicionarTecnico(Tecnico* novoTecnico);
 

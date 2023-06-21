@@ -9,6 +9,7 @@
 
 int main() {
 	Jogo* game = new Jogo();
+	Time* team = new Time();
 	short int op = 0;
 	while (op != 3) {
 		system("clear");
@@ -17,29 +18,27 @@ int main() {
 		switch(op) {
 			case 1:{
 				//criar time
-				Time* team = new Time();
 				op = criarTime(game->getBanco(), team);
 				game->adicionarTime(team);
-				delete team;
 				break;
 			}
 			case 2: {
 				//continuar
 				system("clear");
-				short int t;
+				size_t t;
 				std::cout << "digite 0 para voltar\n\n";
-				if (game->getTimes().size() <= 0) {
+				if (game->getTimes()->size() <= 0) {
 					std::cout << "Não existem times." << std::endl;
 					std::cin >> t;
 				} else {
 	  			    	std::cout << "Selecione o time:\n";
 					imprimirTimes(game);
 					std::cin >> t;
-					while (t > game->getTimes().size() && t != 0) 
+					while (t > game->getTimes()->size() && t != 0) 
 						std::cin >> t;
 					if (t != 0) {
 						t = t-1;
-						std::list<Time*>::iterator it = std::next(game->getTimes().begin(), t);
+						std::list<Time*>::iterator it = std::next(game->getTimes()->begin(), t);
 						editarTime(*it, &op);
 						if (op == 100) {
 							game->adicionarTime(*it);
@@ -56,6 +55,7 @@ int main() {
 				break;
 		}
 	}
+	delete team;
 	delete game;
 	return 0;
 }

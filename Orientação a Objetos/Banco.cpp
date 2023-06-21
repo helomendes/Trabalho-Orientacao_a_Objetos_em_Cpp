@@ -11,6 +11,14 @@ Banco::Banco() {
 	criarTecnicos();
 }
 
+Banco::~Banco() {
+    goleiros.clear();
+	defensores.clear();
+	meiocampistas.clear();
+	atacantes.clear();
+	tecnicos.clear();	
+}
+
 void Banco::adicionarJogador(Jogador* novoJogador) {
 	unsigned char posicao = novoJogador->getNPosicao();
 	switch (posicao)
@@ -36,24 +44,24 @@ void Banco::adicionarJogador(Jogador* novoJogador) {
 	}
 }
 
-std::list<Jogador*> Banco::getGoleiros(){	
-	return goleiros;
+std::list<Jogador*>* Banco::getGoleiros(){	
+	return &goleiros;
 }
 
-std::list<Jogador*> Banco::getDefensores() const{
-	return defensores;
+std::list<Jogador*>* Banco::getDefensores(){
+	return &defensores;
 }
 
-std::list<Jogador*> Banco::getMeiocampistas() const{
-	return meiocampistas;
+std::list<Jogador*>* Banco::getMeiocampistas(){
+	return &meiocampistas;
 }
 
-std::list<Jogador*> Banco::getAtacantes() const{
-	return atacantes;
+std::list<Jogador*>* Banco::getAtacantes(){
+	return &atacantes;
 }
 
-std::list<Tecnico*> Banco::getTecnicos() const{
-	return tecnicos;
+std::list<Tecnico*>* Banco::getTecnicos(){
+	return &tecnicos;
 }
 
 void Banco::criarGoleiros() {
@@ -76,10 +84,6 @@ void Banco::criarGoleiros() {
 	goleiros.push_back(j0);
 	goleiros.push_back(j1);
 	goleiros.sort(comparadorJogadores);
-
-	delete j0;
-	delete j1;
-	delete j2;
 }
 
 void Banco::criarDefensores() {
@@ -132,15 +136,6 @@ void Banco::criarDefensores() {
 	defensores.push_back(j5);
 	defensores.push_back(j9);
 	defensores.sort(comparadorJogadores);
-
-	delete j3;
-	delete j4;
-	delete j5;
-	delete j6;
-	delete j7;
-	delete j8;
-	delete j9;
-	delete j10;
 }
 
 void Banco::criarMeiocampistas() {
@@ -181,13 +176,6 @@ void Banco::criarMeiocampistas() {
 	meiocampistas.push_back(j14);
 	meiocampistas.push_back(j11);
 	meiocampistas.sort(comparadorJogadores);
-
-	delete j11;
-	delete j12;
-	delete j13;
-	delete j14;
-	delete j15;
-	delete j16;
 }
 
 void Banco::criarAtacantes() {
@@ -246,16 +234,6 @@ void Banco::criarAtacantes() {
 	atacantes.push_back(j17);
 	atacantes.push_back(j24);
 	atacantes.sort(comparadorJogadores);
-
-	delete j17;
-	delete j18;
-	delete j19;
-	delete j20;
-	delete j21;
-	delete j22;
-	delete j23;
-	delete j24;
-	delete j25;
 }
 
 void Banco::criarTecnicos() {
@@ -279,11 +257,4 @@ void Banco::criarTecnicos() {
 	tecnicos.push_back(t4);
 	tecnicos.push_back(t5);
 	tecnicos.sort(comparadorTecnicos);
-
-	delete t0;
-	delete t1;
-	delete t2;
-	delete t3;
-	delete t4;
-	delete t5;
 }

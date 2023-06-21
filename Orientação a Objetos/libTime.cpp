@@ -145,10 +145,10 @@ void editarTime(Time *team, short int *op) {
 
 
 void imprimirTimes(Jogo* j) {
-	std::list<Time*> lista = j->getTimes();
+	std::list<Time*>* lista = j->getTimes();
 	std::list<Time*>::iterator it2;
 	short int i = 1;
-	for (it2 = lista.begin(); it2 != lista.end(); it2++) {
+	for (it2 = lista->begin(); it2 != lista->end(); it2++) {
 		std::cout << i << ".\t" << (*it2)->getNomeTime() << '\n';
 		i++;
 	}

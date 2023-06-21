@@ -13,6 +13,6 @@ Tecnico* editarTecnico(Tecnico* t);
 
 void imprimirTecnico(Tecnico* t);
 
-void imprimirTecnicos(std::list<Tecnico*> lista);
+void imprimirTecnicos(std::list<Tecnico*>* lista);
 
 #endif

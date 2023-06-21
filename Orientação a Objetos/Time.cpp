@@ -23,7 +23,7 @@ void Time::mostrarTime() {
 	system("clear");
 	std::cout << "\t" << getNomeTime() << "\n\n";
 	if (time.size() <= 0) {
-		std::cout << "Não existem jogadores\n";
+		std::cout << "Não existem jogadores\n\n";
 	} else {
 		if (coach)
 			std::cout << "\n\tTECNICO:\n";
@@ -33,16 +33,16 @@ void Time::mostrarTime() {
 		imprimirJogador(goleiro);
 		if (defesa.size() > 0)
 			std::cout << "\n\tDEFESA:\n";
-		imprimirJogadores(defesa);
+		imprimirJogadores(&defesa);
 		if (meioCampo.size() > 0)
 			std::cout << "\n\tMEIO CAMPO:\n";
-		imprimirJogadores(meioCampo);
+		imprimirJogadores(&meioCampo);
 		if (ataque.size() > 0)
 			std::cout << "\n\tATAQUE:\n";
-		imprimirJogadores(ataque);
+		imprimirJogadores(&ataque);
 		if (reserva.size() > 0)
 			std::cout << "\n\tRESERVAS:\n";
-		imprimirJogadores(reserva);
+		imprimirJogadores(&reserva);
 	}
 }
 
@@ -81,7 +81,7 @@ void Time::adicionarJogador(Jogador* novoJogador) {
 						if (op == 'y' || op == 'Y') {
 							unsigned short int jog;
 							std::cout << "Escolha o Jogador a ser Substituído: " << '\n';
-							imprimirJogadores(defesa);
+							imprimirJogadores(&defesa);
 							std::cin >> jog;
 							jog--;
 							std::list<Jogador*>::iterator it;
@@ -108,7 +108,7 @@ void Time::adicionarJogador(Jogador* novoJogador) {
 						if (op == 'y' || op == 'Y') {
 							unsigned short int jog;
 							std::cout << "Escolha o Jogador a ser Substituído: " << '\n';
-							imprimirJogadores(meioCampo);
+							imprimirJogadores(&meioCampo);
 							std::cin >> jog;
 							jog--;
 							std::list<Jogador*>::iterator it;
@@ -135,7 +135,7 @@ void Time::adicionarJogador(Jogador* novoJogador) {
 						if (op == 'y' || op == 'Y') {
 							unsigned short int jog;
 							std::cout << "Escolha o Jogador a ser Substituído: " << '\n';
-							imprimirJogadores(ataque);
+							imprimirJogadores(&ataque);
 							std::cin >> jog;
 							jog--;
 							std::list<Jogador*>::iterator it;

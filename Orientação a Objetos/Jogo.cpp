@@ -8,14 +8,15 @@ Jogo::Jogo() {
 
 Jogo::~Jogo() {
 	delete bench;
+	times.clear();
 }
 
 Banco* Jogo::getBanco() const {
 	return bench;
 }
 
-std::list<Time*> Jogo::getTimes() const {
-	return times;
+std::list<Time*>* Jogo::getTimes(){
+	return &times;
 }
 
 void Jogo::adicionarTime(Time* novoTime) {

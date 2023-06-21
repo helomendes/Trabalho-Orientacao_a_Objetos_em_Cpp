@@ -13,6 +13,6 @@ Jogador* editarJogador(Jogador* j);
 
 void imprimirJogador(Jogador* j);
 
-void imprimirJogadores(std::list<Jogador*> lista);
+void imprimirJogadores(std::list<Jogador*>* lista);
 
 #endif

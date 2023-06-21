@@ -12,7 +12,7 @@ Tecnico* addTecnico(Banco* bench) {
 	imprimirTecnicos(bench->getTecnicos());
 	std::cin >> tec;
 	tec--;
-	it = std::next(bench->getTecnicos().begin(), tec);
+	it = std::next(bench->getTecnicos()->begin(), tec);
 	return *it;
 }
 
@@ -167,13 +167,13 @@ void imprimirTecnico(Tecnico* t) {
 	}
 }
 
-void imprimirTecnicos(std::list<Tecnico*> lista) {
-	if (lista.size() <= 0) {
-		std::cout << "Não existes jogadores." << std::endl;
+void imprimirTecnicos(std::list<Tecnico*>* lista) {
+	if (lista->size() <= 0) {
+		std::cout << "Não existes técnicos." << std::endl;
 	}
 	unsigned short int i = 1;
 	std::list<Tecnico*>::iterator it;
-	for (it = lista.begin(); it != lista.end(); it++) {
+	for (it = lista->begin(); it != lista->end(); it++) {
 		std::cout << '\n' << "\t-----" << i << "-----" << '\n';
 		imprimirTecnico(*it);
 		i++;

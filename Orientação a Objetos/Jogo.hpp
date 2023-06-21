@@ -11,7 +11,7 @@ class Jogo{
 
 		Banco* getBanco() const;
 
-		std::list<Time*> getTimes() const;
+		std::list<Time*>* getTimes();
 		void adicionarTime(Time* novoTime);
 		void removerTime(const short int& t);
 

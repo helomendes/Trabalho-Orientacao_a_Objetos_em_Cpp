@@ -21,28 +21,28 @@ Jogador* addJogador(Banco* bench) {
 			imprimirJogadores(bench->getGoleiros());
 			std::cin >> jog;
 			jog--;
-			it = std::next(bench->getGoleiros().begin(), jog);
+			it = std::next(bench->getGoleiros()->begin(), jog);
 			break;
 		case 2:
 			std::cout << "Selecione o Jogador: " << '\n';
 			imprimirJogadores(bench->getDefensores());
 			std::cin >> jog;
 			jog--;
-			it = std::next(bench->getDefensores().begin(), jog);
+			it = std::next(bench->getDefensores()->begin(), jog);
 			break;
 		case 3:
 			std::cout << "Selecione o Jogador: " << '\n';
 			imprimirJogadores(bench->getMeiocampistas());
 			std::cin >> jog;
 			jog--;
-			it = std::next(bench->getMeiocampistas().begin(), jog);
+			it = std::next(bench->getMeiocampistas()->begin(), jog);
 			break;
 		case 4:
 			std::cout << "Selecione o Jogador: " << '\n';
 			imprimirJogadores(bench->getAtacantes());
 			std::cin >> jog;
 			jog--;
-			it = std::next(bench->getAtacantes().begin(), jog);
+			it = std::next(bench->getAtacantes()->begin(), jog);
 			break;
 		default:
 			std::cout << "Opção inválida.\n";
@@ -237,10 +237,10 @@ void imprimirJogador(Jogador* j) {
 	}
 }
 
-void imprimirJogadores(std::list<Jogador*> lista) {
+void imprimirJogadores(std::list<Jogador*>* lista) {
 	unsigned short int i = 1;
 	std::list<Jogador*>::iterator it;
-	for (it = lista.begin(); it != lista.end(); it++) {
+	for (it = lista->begin(); it != lista->end(); it++) {
 		std::cout << '\n' << "\t-----" << i << "-----" << '\n';
 		imprimirJogador(*it);
 		i++;
