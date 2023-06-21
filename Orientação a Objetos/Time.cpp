@@ -22,24 +22,28 @@ void Time::setNomeTime(const std::string& nomeTime) {
 void Time::mostrarTime() {
 	system("clear");
 	std::cout << "\t" << getNomeTime() << "\n\n";
-	if (coach)
-		std::cout << "\n\tTECNICO:\n";
-	imprimirTecnico(coach);
-	if (goleiro)
-		std::cout << "\n\tGOLEIRO:\n";
-	imprimirJogador(goleiro);
-	if (defesa.size() > 0)
-		std::cout << "\n\tDEFESA:\n";
-	imprimirJogadores(defesa);
-	if (meioCampo.size() > 0)
-		std::cout << "\n\tMEIO CAMPO:\n";
-	imprimirJogadores(meioCampo);
-	if (ataque.size() > 0)
-		std::cout << "\n\tATAQUE:\n";
-	imprimirJogadores(ataque);
-	if (reserva.size() > 0)
-		std::cout << "\n\tRESERVAS:\n";
-	imprimirJogadores(reserva);
+	if (time.size() <= 0) {
+		std::cout << "Não existem jogadores\n";
+	} else {
+		if (coach)
+			std::cout << "\n\tTECNICO:\n";
+		imprimirTecnico(coach);
+		if (goleiro)
+			std::cout << "\n\tGOLEIRO:\n";
+		imprimirJogador(goleiro);
+		if (defesa.size() > 0)
+			std::cout << "\n\tDEFESA:\n";
+		imprimirJogadores(defesa);
+		if (meioCampo.size() > 0)
+			std::cout << "\n\tMEIO CAMPO:\n";
+		imprimirJogadores(meioCampo);
+		if (ataque.size() > 0)
+			std::cout << "\n\tATAQUE:\n";
+		imprimirJogadores(ataque);
+		if (reserva.size() > 0)
+			std::cout << "\n\tRESERVAS:\n";
+		imprimirJogadores(reserva);
+	}
 }
 
 void Time::adicionarJogador(Jogador* novoJogador) {
